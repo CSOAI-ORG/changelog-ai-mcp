@@ -1,0 +1,10 @@
+name: changelog-ai-mcp
+description: "MEOK AI Labs — Changelog and versioning tools powered by MEOK AI Labs."
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/changelog-ai-mcp
+license: MIT
+categories: [Developer Tools, Documentation]
+tags: [changelog, release-notes, version-history, semantic-versioning]
+runtime: python
+entrypoint: server.py

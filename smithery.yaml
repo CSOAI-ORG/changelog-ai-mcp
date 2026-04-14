@@ -1,10 +1,43 @@
 name: changelog-ai-mcp
-description: "MEOK AI Labs — Changelog and versioning tools powered by MEOK AI Labs."
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/changelog-ai-mcp
-license: MIT
-categories: [Developer Tools, Documentation]
-tags: [changelog, release-notes, version-history, semantic-versioning]
-runtime: python
-entrypoint: server.py
+description: Changelog parsing, entry generation, version bumping, and comparison.
+version: 1.0.0
+tools:
+- name: parse_changelog
+  description: Parse a Keep-a-Changelog format changelog into structured data.
+  parameters:
+  - name: content
+    type: string
+    required: true
+- name: generate_entry
+  description: Generate a changelog entry in Keep-a-Changelog format.
+  parameters:
+  - name: version
+    type: string
+    required: true
+  - name: changes
+    type: object
+    required: true
+  - name: release_date
+    type: string
+    required: false
+- name: bump_version
+  description: Bump a semantic version number.
+  parameters:
+  - name: current
+    type: string
+    required: true
+  - name: bump_type
+    type: string
+    required: false
+  - name: prerelease
+    type: string
+    required: false
+- name: compare_versions
+  description: Compare two semantic versions and determine their relationship.
+  parameters:
+  - name: version_a
+    type: string
+    required: true
+  - name: version_b
+    type: string
+    required: true

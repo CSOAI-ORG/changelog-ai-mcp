@@ -1,23 +1,84 @@
 {
   "name": "changelog-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Changelog and versioning tools powered by MEOK AI Labs.",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/changelog-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "Changelog parsing, entry generation, version bumping, and comparison.",
+  "version": "1.0.0",
   "tools": [
-    "parse_changelog",
-    "generate_entry",
-    "bump_version",
-    "compare_versions"
-  ],
-  "categories": [
-    "Developer Tools",
-    "Documentation"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "parse_changelog",
+      "description": "Parse a Keep-a-Changelog format changelog into structured data.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ]
+      }
+    },
+    {
+      "name": "generate_entry",
+      "description": "Generate a changelog entry in Keep-a-Changelog format.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "changes": {
+            "type": "object"
+          },
+          "release_date": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "version",
+          "changes"
+        ]
+      }
+    },
+    {
+      "name": "bump_version",
+      "description": "Bump a semantic version number.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "current": {
+            "type": "string"
+          },
+          "bump_type": {
+            "type": "string"
+          },
+          "prerelease": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "current"
+        ]
+      }
+    },
+    {
+      "name": "compare_versions",
+      "description": "Compare two semantic versions and determine their relationship.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "version_a": {
+            "type": "string"
+          },
+          "version_b": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "version_a",
+          "version_b"
+        ]
+      }
+    }
+  ]
 }

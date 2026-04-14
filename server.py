@@ -3,6 +3,11 @@ Changelog AI MCP Server
 Changelog and versioning tools powered by MEOK AI Labs.
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import re
 import time
 from collections import defaultdict
@@ -35,12 +40,16 @@ def _parse_ver(v: str) -> tuple:
 
 
 @mcp.tool()
-def parse_changelog(content: str) -> dict:
+def parse_changelog(content: str, api_key: str = "") -> dict:
     """Parse a Keep-a-Changelog format changelog into structured data.
 
     Args:
         content: Changelog content in markdown format
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("parse_changelog")
     versions = []
     current = None
@@ -71,7 +80,7 @@ def parse_changelog(content: str) -> dict:
 @mcp.tool()
 def generate_entry(
     version: str, changes: dict, release_date: str = ""
-) -> dict:
+, api_key: str = "") -> dict:
     """Generate a changelog entry in Keep-a-Changelog format.
 
     Args:
@@ -79,6 +88,10 @@ def generate_entry(
         changes: Dict with section keys (Added, Changed, Fixed, Removed, etc.) mapping to lists of change descriptions
         release_date: Release date (YYYY-MM-DD, default: today)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("generate_entry")
     if not release_date:
         release_date = date.today().isoformat()
@@ -105,7 +118,7 @@ def generate_entry(
 
 
 @mcp.tool()
-def bump_version(current: str, bump_type: str = "patch", prerelease: str = "") -> dict:
+def bump_version(current: str, bump_type: str = "patch", prerelease: str = "", api_key: str = "") -> dict:
     """Bump a semantic version number.
 
     Args:
@@ -113,6 +126,10 @@ def bump_version(current: str, bump_type: str = "patch", prerelease: str = "") -
         bump_type: Type of bump - 'major', 'minor', 'patch'
         prerelease: Optional prerelease tag (e.g., 'alpha', 'beta.1', 'rc.1')
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("bump_version")
     try:
         major, minor, patch, pre, build = _parse_ver(current)
@@ -134,13 +151,17 @@ def bump_version(current: str, bump_type: str = "patch", prerelease: str = "") -
 
 
 @mcp.tool()
-def compare_versions(version_a: str, version_b: str) -> dict:
+def compare_versions(version_a: str, version_b: str, api_key: str = "") -> dict:
     """Compare two semantic versions and determine their relationship.
 
     Args:
         version_a: First version string
         version_b: Second version string
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("compare_versions")
     try:
         a = _parse_ver(version_a)

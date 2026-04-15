@@ -1,0 +1,53 @@
+{
+  "name": "changelog-ai",
+  "description": "Changelog Ai tools powered by MEOK AI Labs.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/changelog-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "parse_changelog",
+      "description": "Parse a Keep-a-Changelog format changelog into structured data."
+    },
+    {
+      "name": "generate_entry",
+      "description": "Generate a changelog entry in Keep-a-Changelog format."
+    },
+    {
+      "name": "bump_version",
+      "description": "Bump a semantic version number."
+    },
+    {
+      "name": "compare_versions",
+      "description": "Compare two semantic versions and determine their relationship."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Developer Tools"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}

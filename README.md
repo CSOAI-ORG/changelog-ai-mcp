@@ -1,24 +1,58 @@
 # Changelog AI MCP Server
 
-Changelog parsing, entry generation, version bumping, and comparison.
+> By [MEOK AI Labs](https://meok.ai) — Changelog parsing, generation, and semantic version management
+
+## Installation
+
+```bash
+pip install changelog-ai-mcp
+```
+
+## Usage
+
+```bash
+# Run standalone
+python server.py
+
+# Or via MCP
+mcp install changelog-ai-mcp
+```
 
 ## Tools
 
-- **parse_changelog**
-- **generate_entry**
-- **bump_version**
-- **compare_versions**
+### `parse_changelog`
+Parse a Keep-a-Changelog format changelog into structured data with version history.
 
-## Quick Start
+**Parameters:**
+- `content` (str): Changelog content in markdown format
 
-```bash
-pip install mcp
-python server.py
-```
+### `generate_entry`
+Generate a changelog entry in Keep-a-Changelog format with sections (Added, Changed, Fixed, Removed, etc.).
 
-## Rate Limits
+**Parameters:**
+- `version` (str): Version string (e.g., '1.2.0')
+- `changes` (dict): Dict mapping section names to lists of change descriptions
+- `release_date` (str): Release date YYYY-MM-DD (default: today)
 
-- Free tier: 50 calls/day per tool
-- Upgrade: https://meok.ai/pricing
+### `bump_version`
+Bump a semantic version number (major, minor, or patch) with optional prerelease tag.
 
-Built by [MEOK AI Labs](https://meok.ai)
+**Parameters:**
+- `current` (str): Current version string (e.g., '1.2.3')
+- `bump_type` (str): Type of bump — 'major', 'minor', 'patch'
+- `prerelease` (str): Optional prerelease tag (e.g., 'alpha', 'beta.1')
+
+### `compare_versions`
+Compare two semantic versions and determine their relationship (greater, lesser, equal).
+
+**Parameters:**
+- `version_a` (str): First version string
+- `version_b` (str): Second version string
+
+## Authentication
+
+Free tier: 50 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
+
+## License
+
+MIT — MEOK AI Labs

@@ -1,5 +1,6 @@
 name: changelog-ai-mcp
-description: MEOK AI Labs MCP Server
+description: AI-powered changelog ai MCP server for agents. Supports parse changelog,
+  generate entry, bump version. By MEOK AI Labs.
 version: 1.0.0
 tools:
 - name: parse_changelog

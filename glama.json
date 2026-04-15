@@ -1,0 +1,10 @@
+{
+  "name": "changelog-ai-mcp",
+  "description": "MEOK AI Labs \u2014 changelog-ai-mcp",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/changelog-ai-mcp",
+  "license": "MIT",
+  "runtime": "python",
+  "entryPoint": "mcp-wrapper.py"
+}

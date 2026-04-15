@@ -1,6 +1,6 @@
 {
   "name": "changelog-ai-mcp",
-  "description": "Changelog parsing, entry generation, version bumping, and comparison.",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
   "version": "1.0.0",
   "tools": [
     {

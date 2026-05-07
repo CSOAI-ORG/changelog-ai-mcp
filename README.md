@@ -1,3 +1,7 @@
+[![changelog-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/changelog-ai-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/changelog-ai-mcp)
+[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
+[![PyPI](https://img.shields.io/pypi/v/changelog-ai-mcp)](https://pypi.org/project/changelog-ai-mcp/)
+
 [![changelog-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/changelog-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/changelog-ai-mcp)
 
 <div align="center">

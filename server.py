@@ -45,6 +45,21 @@ def parse_changelog(content: str, api_key: str = "") -> dict:
 
     Args:
         content: Changelog content in markdown format
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -87,6 +102,20 @@ def generate_entry(
         version: Version string (e.g., "1.2.0")
         changes: Dict with section keys (Added, Changed, Fixed, Removed, etc.) mapping to lists of change descriptions
         release_date: Release date (YYYY-MM-DD, default: today)
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -125,6 +154,21 @@ def bump_version(current: str, bump_type: str = "patch", prerelease: str = "", a
         current: Current version string (e.g., "1.2.3")
         bump_type: Type of bump - 'major', 'minor', 'patch'
         prerelease: Optional prerelease tag (e.g., 'alpha', 'beta.1', 'rc.1')
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -157,6 +201,21 @@ def compare_versions(version_a: str, version_b: str, api_key: str = "") -> dict:
     Args:
         version_a: First version string
         version_b: Second version string
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:

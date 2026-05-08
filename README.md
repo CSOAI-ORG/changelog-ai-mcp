@@ -1,45 +1,59 @@
-[![changelog-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/changelog-ai-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/changelog-ai-mcp)
-[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
-[![PyPI](https://img.shields.io/pypi/v/changelog-ai-mcp)](https://pypi.org/project/changelog-ai-mcp/)
-
-[![changelog-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/changelog-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/changelog-ai-mcp)
-
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/changelog-ai-mcp)](https://github.com/CSOAI-ORG/changelog-ai-mcp/stargazers)
+# Changelog Ai MCP
 
-# uchangelogU aiU mcp
+**Changelog AI MCP Server**
 
-****
-
-[![npm version](https://img.shields.io/npm/v/@meok-ai/changelog-ai-mcp)](https://www.npmjs.com/package/@meok-ai/changelog-ai-mcp)
+[![PyPI](https://img.shields.io/pypi/v/meok-changelog-ai-mcp)](https://pypi.org/project/meok-changelog-ai-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
-
-[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/changelog-ai-mcp/issues)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-MCP_Server-purple)](https://meok.ai)
 
 </div>
 
----
+## Overview
+
+Changelog AI MCP Server
+Changelog and versioning tools powered by MEOK AI Labs.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `parse_changelog` | Parse a Keep-a-Changelog format changelog into structured data. |
+| `generate_entry` | Generate a changelog entry in Keep-a-Changelog format. |
+| `bump_version` | Bump a semantic version number. |
+| `compare_versions` | Compare two semantic versions and determine their relationship. |
 
 ## Installation
 
 ```bash
-pip install changelog-ai-mcp
-# or
-npm install -g @meok-ai/changelog-ai-mcp
+pip install meok-changelog-ai-mcp
 ```
 
-## Quick Start
+## Usage with Claude Desktop
 
-See the project repository for full documentation and examples.
+Add to your Claude Desktop MCP config (`claude_desktop_config.json`):
 
-## Enterprise Support
+```json
+{
+  "mcpServers": {
+    "changelog-ai": {
+      "command": "python",
+      "args": ["-m", "meok_changelog_ai_mcp.server"]
+    }
+  }
+}
+```
 
-- 📧 nicholas@csoai.org
-- 🌐 [CSOAI.org](https://csoai.org)
+## Usage with FastMCP
+
+```python
+from mcp.server.fastmcp import FastMCP
+
+# This server exposes 4 tool(s) via MCP
+# See server.py for full implementation
+```
 
 ## License
 
-MIT © [CSOAI](https://csoai.org)
-<!-- mcp-name: io.github.CSOAI-ORG/changelog-ai-mcp -->
+MIT © [MEOK AI Labs](https://meok.ai)

@@ -5,7 +5,6 @@ Changelog and versioning tools powered by MEOK AI Labs.
 
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import re
@@ -13,6 +12,15 @@ import time
 from collections import defaultdict
 from datetime import date
 from mcp.server.fastmcp import FastMCP
+
+STRIPE_199 = "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"
+
+def _add_upgrade_tail(response, tier="free"):
+    """Append upgrade nudge to free-tier success responses."""
+    if isinstance(response, dict) and tier == "free":
+        response["_upgrade_note"] = "Pro tier: unlimited calls + priority support. Upgrade: " + STRIPE_199
+    return response
+
 
 mcp = FastMCP("changelog-ai", instructions="MEOK AI Labs MCP Server")
 
@@ -77,7 +85,7 @@ def parse_changelog(content: str, api_key: str = "") -> dict:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("parse_changelog")
     versions = []
@@ -133,7 +141,7 @@ def generate_entry(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("generate_entry")
     if not release_date:
@@ -186,7 +194,7 @@ def bump_version(current: str, bump_type: str = "patch", prerelease: str = "", a
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("bump_version")
     try:
@@ -247,7 +255,7 @@ def compare_versions(version_a: str, version_b: str, api_key: str = "") -> dict:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("compare_versions")
     try:
@@ -285,5 +293,8 @@ def compare_versions(version_a: str, version_b: str, api_key: str = "") -> dict:
             "result": result, "diff_type": diff_type, "compatible": a[0] == b[0]}
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()

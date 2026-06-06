@@ -1,0 +1,33 @@
+# changelog-ai-mcp
+# Changelog and versioning tools powered by MEOK AI Labs.
+
+## Install
+```bash
+pip install changelog-ai-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `parse_changelog`
+Parse a Keep-a-Changelog format changelog into structured data.
+
+### `generate_entry`
+Generate a changelog entry in Keep-a-Changelog format.
+
+### `bump_version`
+Bump a semantic version number.
+
+### `compare_versions`
+Compare two semantic versions and determine their relationship.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

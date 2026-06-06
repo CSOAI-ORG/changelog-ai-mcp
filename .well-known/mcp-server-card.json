@@ -1,0 +1,25 @@
+{
+  "name": "changelog-ai-mcp",
+  "title": "Changelog Ai Mcp",
+  "description": "AI-powered changelog ai MCP server for agents. Supports parse changelog, generate entry, bump version. By MEOK AI Labs.",
+  "version": "1.0.7",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "parse_changelog"
+    },
+    {
+      "name": "generate_entry"
+    },
+    {
+      "name": "bump_version"
+    },
+    {
+      "name": "compare_versions"
+    }
+  ]
+}

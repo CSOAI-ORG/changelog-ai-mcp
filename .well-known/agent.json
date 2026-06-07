@@ -1,0 +1,59 @@
+{
+  "name": "changelog-ai-mcp",
+  "description": "Changelog Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/changelog-ai-mcp.html",
+  "version": "1.0.7",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "parse_changelog",
+      "name": "Parse Changelog",
+      "description": "parse_changelog via changelog-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "generate_entry",
+      "name": "Generate Entry",
+      "description": "generate_entry via changelog-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "bump_version",
+      "name": "Bump Version",
+      "description": "bump_version via changelog-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "compare_versions",
+      "name": "Compare Versions",
+      "description": "compare_versions via changelog-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}

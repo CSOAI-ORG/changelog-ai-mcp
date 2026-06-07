@@ -1,0 +1,22 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "changelog-ai-mcp",
+    "description": "Changelog Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.7",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "changelog-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "parse_changelog",
+      "generate_entry",
+      "bump_version",
+      "compare_versions"
+    ]
+  }
+}

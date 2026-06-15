@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.CSOAI-ORG/changelog-ai-mcp",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Changelog Ai MCP Server by MEOK AI Labs",
   "repository": {
     "url": "https://github.com/CSOAI-ORG/changelog-ai-mcp",
@@ -12,7 +12,7 @@
     {
       "registryType": "pypi",
       "identifier": "changelog-ai-mcp",
-      "version": "1.0.9",
+      "version": "1.0.10",
       "runtimeHint": "python",
       "transport": {
         "type": "stdio"
